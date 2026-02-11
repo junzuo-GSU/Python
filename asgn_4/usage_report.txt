@@ -1,0 +1,10 @@
+      --- SYSTEM QUOTA REPORT ---       
+USER            | USAGE    | STATUS
+----------------------------------------
+admin           |  1024 MB | OVER LIMIT
+j_smith         |   450 MB | OK
+t_doe           |   890 MB | OVER LIMIT
+guest_user      |   120 MB | OK
+dev_team        |  2048 MB | OVER LIMIT
+----------------------------------------
+TOTAL SERVER USAGE: 4532 MB
