@@ -5,6 +5,9 @@ and writes a formatted summary report.
 """
 import os
 
+USAGE_STATUS_OK = "OK"
+USAGE_STATUS_OVER = "OVER LIMIT"
+
 input_file = "raw_usage.txt"
 output_file = "usage_report.txt"
 limit = 500
@@ -19,6 +22,7 @@ if not os.path.exists(input_file):
 with open(input_file, 'r') as f_in, open(output_file, 'w') as f_out:
     # Write the header to the output file
     f_out.write(f"{'--- SYSTEM QUOTA REPORT ---':^40}\n")
+    # f_out.write("{:^15}{:^8}{:^20}".format("USER","USAGE","STATUS") )
     f_out.write(f"{'USER':<15} | {'USAGE':<8} | {'STATUS'}\n")
     f_out.write("-" * 40 + "\n")
 
@@ -37,9 +41,9 @@ with open(input_file, 'r') as f_in, open(output_file, 'w') as f_out:
 
         # 4. Logic check for Status
         if usage_mb > limit:
-            status = "OVER LIMIT"
+            status = USAGE_STATUS_OVER
         else:
-            status = "OK"
+            status = USAGE_STATUS_OK
 
         # 5. Write formatted text to the report file
         f_out.write(f"{username:<15} | {usage_mb:>5} MB | {status}\n")

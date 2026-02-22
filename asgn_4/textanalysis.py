@@ -1,10 +1,13 @@
 """
 Program: textanalysis.py
-Debugging Exercise 4
 
 Computes and displays the Flesch Index and the Grade
 Level Equivalent for the readability of a text file.
-Updated to count syllables containing multiple vowels
+The calcualtion includes: number of lines and number of words and number of syllables in the text file.
+The syllable counting is done by counting the number of vowel groups in each word, 
+with adjustments for silent 'e', 'es', and 'ed' endings, and treating 'le' endings as single syllables. 
+This approach provides a more accurate syllable count for English words, 
+which is essential for calculating the Flesch Index and Grade Level Equivalent correctly.
 as single syllables.
 """
 
