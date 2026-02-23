@@ -1,4 +1,17 @@
+import os
+
+PROD_SUFFIX = "-prod"
+DEV_SUFFIXES = ("-dev", "-lab")
+PRODUCTION = "Production"
+DEVELOPMENT = "Development"
+UNKNOWN = "Unknown"
+
 def get_server_list(filename):
+    if not os.path.exists(filename):
+        print(f"Error: The file '{filename}' does not exist.")
+        print("Current working directory:", os.getcwd())
+        return []
+     
     server_list = []
     with open(filename, 'r') as file:
         for line in file:
